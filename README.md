@@ -22,4 +22,4 @@ This repository serves as a guide for completing the assignment and contains rel
 
 For any questions or clarifications, please contact the instructor.
 
-*Note: Detailed instructions, data, and resources are available in the repository for reference.*
+*Note: Detailed instructions, data, and resources are available in the repository for reference.
