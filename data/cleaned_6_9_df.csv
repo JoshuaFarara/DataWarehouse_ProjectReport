@@ -1,0 +1,124 @@
+ID,Name,Address,Major,Degree,GPA,Semester,Y,Status
+999,CK. Brown,Denver,Applied Sc,AS,4.0,Sum1,1989,International Student
+961,QT. Brady,Pine Bluff,"Computer
+Sc",AS,3.8,Sum2,1987,International Student
+962,UL. Jones,Little Rock,"Computer
+Sc",AS,3.1,Sum2,1984,Out of state
+970,Bf. Brady,Little Rock,Applied Sc,AS,3.2,Sum1,1992,Out of state
+975,CM. Cook,Little Rock,Biology,BS,2.2,F,1987,Out of state
+412,DP. Morty,Atlanta,Biology,BA,3.9,S,1984,Out of state
+971,UK. Yu,Conway,Secondary,MS,3.2,F,1990,Out of state
+989,Li. Mooshe,Atlanta,Secondary,MS,3.9,F,1990,Non-of-the above
+998,Di. Morgan,Conway,Biology,MS,3.9,S,1987,Non-of-the above
+964,YH. Brady,Conway,Applied Sc,BA,3.2,Sum1,1987,Non-of-the above
+977,WT. Brady,Conway,Applied Sc,BA,3.2,Sum2,1987,Non-of-the above
+987,AC. Bank,Conway,Applied Sc,BA,3.2,Sum2,1987,Non-of-the above
+988,TP. Kim,Conway,Elementary,BS,3.2,Sum1,1990,Non-of-the above
+902,CY. Crema,Little Rock,Biology,BS,2.2,S,1987,Non-of-the above
+969,D. Abuly,Savannah,Economics,BS,3.9,S,1990,
+968,G. Halky,Atlanta,B Admin,BS,2.9,S,1990,
+967,W.Goast,Savannah,Accounting,BS,4.1,F,1990,
+833,T. Chenty,Conway,Elementary,AS,3.2,Sum1,1991,
+124,U. Algy,Denver,Applied Sc,AS,4.0,S,1992,International Student
+976,YI. Torgan,Conway,Biology,AS,3.9,S,1987,International Student
+100,D. Reddyg,Seattle,Info Sc,MS,2.1,F,1990,International Student
+969,Y. Bankrpt,Conway,Applied Sc,MS,3.2,Sum1,1987,Out of state
+901,UI. Wagon,Little Rock,Computer S,MS,3.1,Sum1,1984,Out of state
+902,C. Browner,Denver,Applied Sc,MS,4.0,S,1989,Out of state
+777,F. Anglic,Atlanta,Biology,BS,3.9,S,1990,Non-of-the above
+779,BB. Goofan,Atlanta,Chemistry,BS,2.1,F,1991,Non-of-the above
+933,GG. Art,Savannah,English,BA,3.1,Sum2,1991,Non-of-the above
+941,BB. Mercy,Savannah,English,MA,4.0,Sum2,1991,Non-of-the above
+667,K. Chen,Conway,Elementary,EdD,3.2,Sum2,1992,Out of state
+529,M. Yu,Conway,Secondary,MS,3.2,S,1990,International Student
+552,K. Ahmad,Atlanta,Secondary,EdD,3.9,Invalid Date,1987,Out of state
+687,Y. Morty,Atlanta,Computer Sc,BS,3.9,Sum1,1984,Non-of-the above
+688,Y. Crema,Little Rock,Biology,AS,2.2,Sum1,1987,Non-of-the above
+653,C. Alshukri,Denver,Applied Sc,PhD,4.0,F,1991,Out of state
+986,Q. Brady,Pine Bluff,Computer Sc,MS,3.8,S,1987,Non-of-the above
+579,U. Jones,Little Rock,Computer Sc,BS,3.1,S,1984,Non-of-the above
+200,B. Brady,Little Rock,Applied Sc,PhD,3.2,S,1992,International Student
+300,C. Cook,Little Rock,Biology,BS,2.2,Sum1,1987,International Student
+422,U. Yu,Conway,Secondary,MS,3.2,S,1990,Out of state
+423,U. Mooshe,Atlanta,Secondary,EdD,3.9,Sum1,1990,Out of state
+401,D. Morgan,Conway,Biology,BS,3.9,Sum1,1987,International Student
+201,W. Brady,Conway,Applied Sc,PhD,3.2,S,1987,International Student
+202,A. Bank,Conway,Applied Sc,PhD,3.2,Sum1,1987,Non-of-the above
+415,T. King,Conway,Elementary,EdD,3.2,Sum2,1990,Non-of-the above
+901,C. Crema,Little Rock,Biology,AS,2.2,Sum1,1987,Out of state
+222,D. Abul,Savannah,Economics,BA,3.9,Sum2,1990,Non-of-the above
+333,G. Halk,Atlanta,B Admin,MBA,2.9,Sum2,1990,Non-of-the above
+431,W.Goos,Savannah,Accounting,BA,4.1,Sum2,1990,Out of state
+421,T. Chen,Conway,Elementary,EdD,3.2,Sum2,1991,International Student
+524,U. Alramzy,Denver,Applied Sc,PhD,4.0,F,1992,International Student
+689,Y. Morgan,Conway,Biology,BS,3.9,Sum1,1987,Non-of-the above
+195,D. Red,Seattle,Info Sc,BS,2.1,F,1990,Out of state
+703,Y. Bank,Conway,Applied Sc,PhD,3.2,Sum2,1987,Out of state
+665,Z. Silver,Seattle,Elementary,EdD,3.3,Sum2,1991,International Student
+739,A. Moon,Little Rock,Computer Sc,BS,3.1,Sum1,1984,Non-of-the above
+839,Q. Robe,Pine Bluff,Computer Sc,MS,3.8,Sum1,1987,Non-of-the above
+939,U. Wang,Little Rock,Computer Sc,AS,3.1,Sum2,1984,Out of state
+500,K.Bronz,Dallas,Chemistry,MS,3.2,Sum1,1988,Out of state
+132,A. White,Orlando,Computer Sc,AS,3.9,Sum2,1992,Non-of-the above
+232,K. Blue,Little Rock,English,AS,3.1,Sum2,1991,International Student
+352,C. Black,Pine Bluff,Applied,PhD,3.8,Sum2,1990,Out of state
+600,C. Jones,Dallas,Info Sc,BS,4.0,F,1988,Out of state
+682,Y. Cook,Little Rock,Biology,BS,2.2,Sum1,1987,Out of state
+452,N. Brady,Little Rock,Applied Sc,PhD,3.2,Sum2,1988,International Student
+590,X. Cook,Little Rock,Biology,AS,2.2,Sum1,1992,Non-of-the above
+690,D. Brown,Atlanta,Biology,BS,3.9,Sum1,1988,Non-of-the above
+175,K. Glob,Dallas,Applied Sc,PhD,3.2,Sum1,1989,Non-of-the above
+185,X. Jones,New York,Info Sc,BS,4.0,F,1990,Non-of-the above
+700,A. Boss,Seattle,Elementary,MS,3.3,Sum2,1984,International Student
+800,K. Queen,Conway,Elementary,EdD,3.2,Sum2,1989,Out of state
+416,T. Gola,Conway,Secondary,MS,3.2,S,1990,Non-of-the above
+420,T. Silver,Seattle,Elementary,EdD,3.3,Sum2,1991,Non-of-the above
+900,B. Gola,Conway,Secondary,MS,3.2,S,1987,International Student
+955,K. Booth,Atlanta,Secondary,MS,3.9,S,1987,Out of state
+956,C. Jessy,Orlando,Applied Sc,MS,4.0,F,1989,Out of state
+150,A. Cool,Orlando,Computer Sc,MS,3.9,Sum2,1986,International Student
+250,K. Jones,Little Rock,Computer Sc,BS,3.1,Sum2,1986,Non-of-the above
+350,C. Cool,Pine Bluff,Applied,MS,4.0,Sum2,1986,Non-of-the above
+229,M. Katchal,Savannah,Economics,BA,3.0,Sum2,1991,Non-of-the above
+339,H.Poory,Atlanta,B Admin,BA,3.9,Sum2,1987,Non-of-the above
+439,H. Mishu,Savannah,Accounting,BA,2.8,Sum2,1987,Out of state
+329,G. Kooper,Savannah,Accounting,BA,3.0,Sum2,1991,Non-of-the above
+339,M. Bayraq,Savannah,MBA,MBA,3.9,Sum2,1987,Non-of-the above
+337,N. Mikhy,Savannah,B Admin,BA,2.8,Sum2,1987,Out of state
+650,D. Sorty,Atlanta,Biology,BS,3.9,Sum1,1984,Non-of-the above
+750,K.Gold,Dallas,Applied Sc,PhD,3.2,Sum1,1984,Non-of-the above
+850,F. Jones,New York,Info Sc,BS,4.0,F,1985,International Student
+950,D. Golden,Seattle,Info Sc,BS,2.1,F,1985,International Student
+165,A. Silver,Seattle,Elementary,MS,3.3,Sum2,1985,Out of state
+418,T. Brown,Denver,Applied Sc,PhD,4.0,F,1992,Out of state
+419,T. Red,Seattle,Info Sc,BS,2.1,F,1992,Out of state
+215,K. King,Conway,Elementary,EdD,3.2,Sum2,1984,Non-of-the above
+315,M. Gola,Conway,English,MS,3.2,S,1984,Non-of-the above
+255,K. Dool,Atlanta,Engl,MS,3.9,Sum1,1986,Non-of-the above
+299,M. Golab,Seatel,Chemistry,BS,3.0,S,1992,Non-of-the above
+199,K. Duell,Atlanta,Biology,AS,4.0,F,1988,International Student
+473,M. Browny,Seattle,CS,PhD,4.0,S,1992,International Student
+407,T. Doolak,Seattle,BusinessAD,MBA,3.1,Sum1,1992,Out of state
+205,K. Minges,Conway,Elementary,EdD,3.2,Sum2,1984,Non-of-the above
+305,H. Molar,Conway,Biology,MS,3.2,Sum1,1984,Non-of-the above
+207,K. Goolar,Atlanta,Chemistry,MS,3.9,Sum1,1986,Non-of-the above
+107,M. Kochaal,Savannah,Chemistry,BS,3.9,S,1992,Non-of-the above
+305,M. Searsy,Conway,Biol,MS,3.2,Sum1,1984,Non-of-the above
+207,P. Little,Atlanta,Chemistry,MS,3.9,Sum1,1986,Non-of-the above
+107,M. Big,Little Rock,Chemistry,BS,3.9,S,1992,Out of state
+109,P. Board,Atlanta,Chem,AS,4.0,F,1988,International Student
+305,M. Korp,Conway,Biology,MS,3.2,Sum1,1984,Non-of-the above
+109,G. Bear,Little Rock,Biology,AS,4.0,F,1988,Out of state
+591,Z. Kochaal,Savannah,Chemistry,BS,3.9,S,1992,Non-of-the above
+391,X. Searsy,Conway,Biology,MS,3.2,Sum1,1984,Non-of-the above
+201,Y. Little,Atlanta,Chemistry,MS,3.9,Sum1,1986,Non-of-the above
+117,W. Big,Little Rock,Chemistry,BS,3.9,S,1992,Out of state
+612,V. Board,Atlanta,Chemistry,AS,4.0,F,1988,International Student
+305,M. Kartsoo,Conway,Biology,MS,3.2,Sum1,1984,Non-of-the above
+609,N. Gearsal,Little Rock,Biology,BS,4.0,F,1988,Out of state
+615,K. Jiring,Conway,Element.,BA,3.2,Sum2,1984,Non-of-the above
+715,M. Chendo,Conway,Secondary,MS,3.2,S,1984,Non-of-the above
+855,Z. Megart,Atlanta,Secondary,MS,3.9,Sum1,1986,Non-of-the above
+699,A. Woo,Seattle,Elementary,BA,3.0,S,1992,Non-of-the above
+933,CC. Artian,Atlanta,English,BA,2.9,Sum2,1991,Non-of-the above
+941,D. Merdoo,Atlanta,English,MA,2.8,Sum2,1991,Non-of-the above

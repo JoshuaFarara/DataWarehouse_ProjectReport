@@ -1,0 +1,29 @@
+ID,Name,Address,Major,Degree,GPA,Semester,Y,Status
+999,CK. Brown,Denver,Applied Sc,AS,4.0,Sum1,89,I
+961,QT. Brady,Pine Bluff,"Computer
+Sc",AS,3.8,Sum2,87,I
+962,UL. Jones,Little Rock,"Computer
+Sc",AS,3.1,Sum2,84,O
+970,Bf. Brady,Little Rock,Applied Sc,AS,3.2,Sum1,92,O
+975,CM. Cook,Little Rock,Biology,BS,2.2,F,87,O
+412,DP. Morty,Atlanta,Biology,BA,3.9,S,84,O
+971,UK. Yu,Conway,Secondary,MS,3.2,F,90,O
+989,Li. Mooshe,Atlanta,Secondary,MS,3.9,F,90,N
+998,Di. Morgan,Conway,Biology,MS,3.9,S,87,N
+964,YH. Brady,Conway,Applied Sc,BA,3.2,Sum1,87,N
+977,WT. Brady,Conway,Applied Sc,BA,3.2,Sum2,87,N
+987,AC. Bank,Conway,Applied Sc,BA,3.2,Sum2,87,N
+988,TP. Kim,Conway,Elementary,BS,3.2,Sum1,90,N
+902,CY. Crema,Little Rock,Biology,BS,2.2,S,87,N
+969,D. Abuly,Savannah,Economics,BS,3.9,S,90,
+968,G. Halky,Atlanta,B Admin,BS,2.9,S,90,
+967,W.Goast,Savannah,Accounting,BS,4.1,F,90,
+833,T. Chenty,Conway,Elementary,AS,3.2,Sum1,91,
+124,U. Algy,Denver,Applied Sc,AS,4.0,S,92,I
+976,YI. Torgan,Conway,Biology,AS,3.9,S,87,I
+100,D. Reddyg,Seattle,Info Sc,MS,2.1,F,90,I
+969,Y. Bankrpt,Conway,Applied Sc,MS,3.2,Sum1,87,O
+901,UI. Wagon,Little Rock,Computer S,MS,3.1,Sum1,84,O
+902,C. Browner,Denver,Applied Sc,MS,4.0,S,89,O
+777,F. Anglic,Atlanta,Biology,BS,3.9,S,90,N
+779,BB. Goofan,Atlanta,Chemistry,BS,2.1,F,91,N

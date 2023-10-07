@@ -1,10 +1,10 @@
-ID,Name,Address,Major,Degree,GPA,MonthDay,Y,Status
-356,C. Brown,Denver,Applied Sc,PhD,4.0,Dec.15,89,I
-100,A. Jones,Little Rock,Computer Sc,BS,3.1,May 15,84,I
-400,D. Morty,Atlanta,Biology,BS,3.9,July 4,84,N
-702,Y. Brady,Conway,Applied Sc,PhD,3.2,May 15,87,I
-356,C. Brown,Denver,Applied Sc,PhD,4.0,Dec.15,89,O
-100,A. Jones,Little Rock,Computer Sc,MS,3.2,May 15,87,N
-680,Y. Brady,Pine Bluff,Computer Sc,MS,3.8,May 15,90,O
-400,D. Morty,Seattle,Info Sc,BS,2.1,Dec. 15,88,I
-681,Y. Brady,Little Rock,Applied Sc,PhD,3.2,May 15,91,N
+ID,Name,Address,Major,Degree,GPA,Semester,Y,Status
+356,C. Brown,Denver,Applied Sc,PhD,4.0,F,1989,International Student
+100,A. Jones,Little Rock,Computer Sc,BS,3.1,S,1984,International Student
+400,D. Morty,Atlanta,Biology,BS,3.9,Sum1,1984,Non-of-the above
+702,Y. Brady,Conway,Applied Sc,PhD,3.2,S,1987,International Student
+356,C. Brown,Denver,Applied Sc,PhD,4.0,F,1989,Out of state
+100,A. Jones,Little Rock,Computer Sc,MS,3.2,S,1987,Non-of-the above
+680,Y. Brady,Pine Bluff,Computer Sc,MS,3.8,S,1990,Out of state
+400,D. Morty,Seattle,Info Sc,BS,2.1,F,1988,International Student
+681,Y. Brady,Little Rock,Applied Sc,PhD,3.2,S,1991,Non-of-the above
