@@ -1,15 +1,15 @@
-import mysql.connector
-from datetime import datetime
+# import mysql.connector
+# from datetime import datetime
 
-db = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='x', #change this for your specific server
-    database="datawarehouse" # connect to specific database
-)
+# db = mysql.connector.connect(
+#     host='localhost',
+#     user='root',
+#     password='1038368', #change this for your specific server
+#     database="datawarehouse" # connect to specific database
+# )
 # Create database
 # mycursor.execute("CREATE DATABASE testdatabase")
-mycursor = db.cursor()
+# mycursor = db.cursor()
 
 ''' create a table'''
 # mycursor.execute("CREATE TABLE Client (name VARCHAR(50), age smallint UNSIGNED, clientID int PRIMARY KEY AUTO_INCREMENT)")
