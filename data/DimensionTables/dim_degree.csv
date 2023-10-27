@@ -1,0 +1,9 @@
+degree_id,degree_name,degree_abbreviation
+1,Associate degree,AS
+2,Bachelor of Science,BS
+3,Bachelor of Art,BA
+4,Master of Science,MS
+5,Master of Art,MA
+6,Master of Business Administration,MBA
+7,Doctor of Education,EdD
+8,Doctor of Philosophy,PhD
