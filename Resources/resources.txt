@@ -1,1 +1,6 @@
+Websites:
 https://hevodata.com/learn/flask-mysql/ 
+https://www.ibm.com/topics/olap?utm_medium=OSocial&utm_source=Youtube&utm_content=WAIWW&utm_id=YTCard-1101-OLAP-vs-OLTP-Learn-Hub-What-is-OLAP
+
+
+YoutubeVideos:
