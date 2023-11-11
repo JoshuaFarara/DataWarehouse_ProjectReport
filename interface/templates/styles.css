@@ -50,6 +50,62 @@ body {
     -webkit-transition: all 0.5s;
 }
 
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 30px;
+}
+
+.sidebar-title > span {
+    display: none;
+}
+
+.sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+}
+
+.sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    /*
+      the z-index of the ApexCharts is 11
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+    z-index: 12 !important;
+}
+
+/*
+Add seperate css for the Dimensions element.
+Add Javascript for onclick() the chevron icon is more/less
+when onclick() = dimensionsOpen() = list of dimensions is shown,, dimensionsClosed() = list of dimensions are hidden
+*/
+
+/*
+for each dimension in the list, the checkboxes should be unchecked, when clicked the icon should change to the checked icon
+*/
+
 /*-------- MAIN -------*/
 .main-container {
     grid-area: main;
