@@ -1,0 +1,3 @@
+SELECT dimensions[], count(number_graduates)
+FROM fact_numberofgraduates
+GROUP BY GROUPING SETS(dimensions[], ()) # for the grand count add () to the end of dimensions from select statement used in grouping
