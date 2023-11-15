@@ -1,0 +1,113 @@
+<div class="panel panel-primary ng-scope" ng-repeat="category in ceremony.Survey.Categories" ng-show="(!RegistrationEnded &amp;&amp; !dependencyHide(category) &amp;&amp; !category.Expired &amp;&amp; !category.Hidden) || category.CategoryType == 1">
+    <!-- ngIf: category.CategoryType == 0 --><div ng-if="category.CategoryType == 0" role="region" class="ng-scope">
+        <div class="panel-heading">
+            <h2 class="panel-title ng-binding">Share Your Graduation Details with Friends and Family</h2>
+            <div ng-bind-html="category.Description | unsafe" class="ng-binding"></div>
+        </div>
+        <div class="panel-body">
+            <table role="presentation" class="table table-condensed table-striped table-responsive">
+                <tbody>
+                    <!-- ngRepeat: question in category.Questions | orderBy:'Order' --><tr ng-repeat="question in category.Questions | orderBy:'Order'" ng-hide="dependencyHide(question) || question.Hidden || question.Expired" class="ng-scope">
+                        <td class="col-sm-6">                                
+                            <!-- ngIf: question.AllowResponse && question.Type != 'Radio' --><label for="question167758" ng-if="question.AllowResponse &amp;&amp; question.Type != 'Radio'" class="ng-binding ng-scope">Would you like to share your graduation information?</label><!-- end ngIf: question.AllowResponse && question.Type != 'Radio' -->
+                            <!-- ngIf: question.AllowResponse && question.Type == 'Radio' -->
+                            <!-- ngIf: !question.AllowResponse -->
+                            <span class="glyphicon glyphicon-asterisk small icon-danger ng-hide" ng-show="question.Required"></span>
+                            <p class="weight-normal ng-binding" ng-bind-html="question.Details | unsafe">Enter email addresses of anyone whom you would like to send information about this event. There is no limit on email addresses, hit "enter" after each address is entered.</p>
+                            <!-- ngIf: showFFWarning(question) -->
+                        </td>
+                        <td class="col-sm-6">
+                            <!-- ngIf: !question.AllowResponse -->
+                            <!-- ngIf: question.AllowResponse --><div ng-if="question.AllowResponse" class="ng-scope"><answers question="question" cerid="ceremony.Id" gradid="graduate.Id" category="category" class="ng-isolate-scope"><div ng-switch="question.Type">
+
+<!-- ngSwitchWhen: Check -->
+
+<!-- ngSwitchWhen: Radio -->
+
+<!-- ngSwitchWhen: Dropdown -->
+
+<!-- ngSwitchWhen: TypeIn -->
+
+<!-- ngSwitchWhen: MultiLineTypeIn -->
+
+<!-- ngSwitchWhen: PhotoUpload -->
+
+<!-- ngSwitchWhen: PhoneticPronunciation -->
+
+<!-- ngSwitchWhen: MobilePhone -->
+
+<!-- ngSwitchWhen: PersonalMessage -->
+
+<!-- ngSwitchWhen: Email -->
+
+<!-- ngSwitchWhen: PreferredFullName -->
+
+<!-- ngSwitchWhen: FriendsAndFamilyEmail --><div ng-switch-when="FriendsAndFamilyEmail" class="ng-scope">
+    <tags-input class="bootstrap ng-pristine ng-valid ng-isolate-scope ng-valid-max-tags ng-valid-min-tags ng-valid-leftover-text ng-touched" placeholder="Add Here" allowed-tags-pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" ng-model="question.Response" data-qa="Would you like to share your graduation information?"><div class="host" tabindex="-1" ng-click="eventHandlers.host.click()" ti-transclude-append=""><div class="tags" ng-class="{focused: hasFocus}"><ul class="tag-list"><!-- ngRepeat: tag in tagList.items track by track(tag) --></ul><input class="input ng-pristine ng-valid ng-touched" autocomplete="off" ng-model="newTag.text" ng-model-options="{getterSetter: true}" ng-keydown="eventHandlers.input.keydown($event)" ng-focus="eventHandlers.input.focus($event)" ng-blur="eventHandlers.input.blur($event)" ng-paste="eventHandlers.input.paste($event)" ng-trim="false" ng-class="{'invalid-tag': newTag.invalid}" ng-disabled="disabled" ti-bind-attrs="{type: options.type, placeholder: options.placeholder, tabindex: options.tabindex, spellcheck: options.spellcheck}" ti-autosize="" type="text" placeholder="Add Here" spellcheck="true" style="width: 67px;"><span class="input" style="visibility: hidden; width: auto; white-space: pre; display: none;">Add Here</span></div>
+    </div></tags-input>
+</div><!-- end ngSwitchWhen: -->
+</div>
+</answers></div><!-- end ngIf: question.AllowResponse -->
+                        </td>
+                    </tr><!-- end ngRepeat: question in category.Questions | orderBy:'Order' -->
+                </tbody>
+            </table>
+        </div>
+    </div><div ng-if="category.CategoryType == 0" role="region" class="ng-scope">
+        <div class="panel-heading">
+            <h2 class="panel-title ng-binding">Share Your Graduation Details with Friends and Family</h2>
+            <div ng-bind-html="category.Description | unsafe" class="ng-binding"></div>
+        </div>
+        <div class="panel-body">
+            <table role="presentation" class="table table-condensed table-striped table-responsive">
+                <tbody>
+                    <!-- ngRepeat: question in category.Questions | orderBy:'Order' --><tr ng-repeat="question in category.Questions | orderBy:'Order'" ng-hide="dependencyHide(question) || question.Hidden || question.Expired" class="ng-scope">
+                        <td class="col-sm-6">                                
+                            <!-- ngIf: question.AllowResponse && question.Type != 'Radio' --><label for="question167758" ng-if="question.AllowResponse &amp;&amp; question.Type != 'Radio'" class="ng-binding ng-scope">Would you like to share your graduation information?</label><!-- end ngIf: question.AllowResponse && question.Type != 'Radio' -->
+                            <!-- ngIf: question.AllowResponse && question.Type == 'Radio' -->
+                            <!-- ngIf: !question.AllowResponse -->
+                            <span class="glyphicon glyphicon-asterisk small icon-danger ng-hide" ng-show="question.Required"></span>
+                            <p class="weight-normal ng-binding" ng-bind-html="question.Details | unsafe">Enter email addresses of anyone whom you would like to send information about this event. There is no limit on email addresses, hit "enter" after each address is entered.</p>
+                            <!-- ngIf: showFFWarning(question) -->
+                        </td>
+                        <td class="col-sm-6">
+                            <!-- ngIf: !question.AllowResponse -->
+                            <!-- ngIf: question.AllowResponse --><div ng-if="question.AllowResponse" class="ng-scope"><answers question="question" cerid="ceremony.Id" gradid="graduate.Id" category="category" class="ng-isolate-scope"><div ng-switch="question.Type">
+
+<!-- ngSwitchWhen: Check -->
+
+<!-- ngSwitchWhen: Radio -->
+
+<!-- ngSwitchWhen: Dropdown -->
+
+<!-- ngSwitchWhen: TypeIn -->
+
+<!-- ngSwitchWhen: MultiLineTypeIn -->
+
+<!-- ngSwitchWhen: PhotoUpload -->
+
+<!-- ngSwitchWhen: PhoneticPronunciation -->
+
+<!-- ngSwitchWhen: MobilePhone -->
+
+<!-- ngSwitchWhen: PersonalMessage -->
+
+<!-- ngSwitchWhen: Email -->
+
+<!-- ngSwitchWhen: PreferredFullName -->
+
+<!-- ngSwitchWhen: FriendsAndFamilyEmail --><div ng-switch-when="FriendsAndFamilyEmail" class="ng-scope">
+    <tags-input class="bootstrap ng-pristine ng-valid ng-isolate-scope ng-valid-max-tags ng-valid-min-tags ng-valid-leftover-text ng-touched" placeholder="Add Here" allowed-tags-pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" ng-model="question.Response" data-qa="Would you like to share your graduation information?"><div class="host" tabindex="-1" ng-click="eventHandlers.host.click()" ti-transclude-append=""><div class="tags" ng-class="{focused: hasFocus}"><ul class="tag-list"><!-- ngRepeat: tag in tagList.items track by track(tag) --></ul><input class="input ng-pristine ng-valid ng-touched" autocomplete="off" ng-model="newTag.text" ng-model-options="{getterSetter: true}" ng-keydown="eventHandlers.input.keydown($event)" ng-focus="eventHandlers.input.focus($event)" ng-blur="eventHandlers.input.blur($event)" ng-paste="eventHandlers.input.paste($event)" ng-trim="false" ng-class="{'invalid-tag': newTag.invalid}" ng-disabled="disabled" ti-bind-attrs="{type: options.type, placeholder: options.placeholder, tabindex: options.tabindex, spellcheck: options.spellcheck}" ti-autosize="" type="text" placeholder="Add Here" spellcheck="true" style="width: 67px;"><span class="input" style="visibility: hidden; width: auto; white-space: pre; display: none;">Add Here</span></div>
+    </div></tags-input>
+</div><!-- end ngSwitchWhen: -->
+</div>
+</answers></div><!-- end ngIf: question.AllowResponse -->
+                        </td>
+                    </tr><!-- end ngRepeat: question in category.Questions | orderBy:'Order' -->
+                </tbody>
+            </table>
+        </div>
+    </div><!-- end ngIf: category.CategoryType == 0 -->
+    <!-- ngIf: category.CategoryType == 1 -->
+    <!-- ngIf: category.CategoryType == 2 -->
+</div>

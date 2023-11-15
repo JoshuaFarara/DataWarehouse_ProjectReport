@@ -1,3 +1,24 @@
-SELECT dimensions[], count(number_graduates)
-FROM fact_numberofgraduates
-GROUP BY GROUPING SETS(dimensions[], ()) # for the grand count add () to the end of dimensions from select statement used in grouping
+Get the number of graduates with a BS in Computer science in summer of
+1988.
+
+SELECT COUNT(*) AS NumberOfGraduates, f.GraduateID, f.GraduateName, y.year, s.semester_abbreviation
+FROM datawarehouse.fact_numberofgraduates f
+JOIN dim_major m ON f.MajorID  = m.major_id
+JOIN dim_semester s ON f.SemesterID  = s.semester_id
+JOIN dim_year y ON f.YearID  = y.year_id
+JOIN dim_degree d ON f.DegreeID = d.degree_id
+WHERE  d.degree_abbreviation = 'BS' -- Assuming 'BS' is represented by DegreeID = dim_degree
+AND m.major_name = 'Computer Sc' 
+AND s.semester_abbreviation = 'Sum2' -- OR s.semester_abbreviation = 'Sum1'
+AND y.year = 1986
+GROUP BY f.GraduateID, f.GraduateName, y.year, s.semester_abbreviation WITH ROLLUP
+
+
+
+output:
+GraduateID, GraduateName, YearID, NumberOfGraduates
+1	250	K. Jones	1986	Sum2
+1	250	K. Jones	1986	
+1	250	K. Jones		
+1	250			
+1				
