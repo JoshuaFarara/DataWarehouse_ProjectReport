@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <!-- <link rel="stylesheet" href="interface\static\styles.css"> -->
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
@@ -153,10 +154,21 @@
                 <h6>Choose Dimension(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
                 <h6>choose footsteps:</h6> <button type="button" class="btn btn-outline-primary">select</button>
               </div>
-              
-            </div>
 
+            </div>
             
+            <div class="olap-card">
+              <h2 class="olap-title"> Major Footsteps</h2>
+              <!-- <span class="material-icons-outlined">add_chart</span> -->
+              <div class="card-inner">
+                <div>
+                  {% for major in majors %}
+                    <div>{{majors['major_name']}}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+            </div>
           </div>
           
         </div>
