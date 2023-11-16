@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <!-- <link rel="stylesheet" href="interface\static\styles.css"> -->
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
@@ -88,7 +89,7 @@
 
       <!-- Main -->
       <main class="main-container">
-        <div class=" main-title">
+        <div class="main-title">
           <h2>Data Warehouse Dashboard</h2>
           <!-- <p>Lets start building a beautiful datawarehouse dashboard to display the Number of Graduates based on the fact tables dimensions.</p> -->
         </div>
@@ -98,7 +99,7 @@
           <!-- <p>Lets start building a beautiful datawarehouse dashboard to display the Number of Graduates based on the fact tables dimensions.</p> -->
         </div>
 
-        <div class="main-cards">
+        <!-- <div class="main-cards">
 
           <div class="card">
             <div class="card-inner">
@@ -112,7 +113,7 @@
               <h3>Dimensions</h3>
               <span class="material-icons-outlined">table_chart</span>
             </div>
-          </div>
+          </div> -->
 
           <!-- <div class="card">
             <div class="card-inner">
@@ -121,24 +122,53 @@
             
           </div> -->
 
-          <!-- <div class="fact-table-cards">
+          <div class="fact-table-cards">
 
-            <div class="card">
+            <div class="selection-card">
+              <h2 class="selection-title">Fact Table</h2>
+              <!-- <span class="material-icons-outlined">add_chart</span> -->
               <div class="card-inner">
-                <h3>Fact Table</h3>
-                <span class="material-icons-outlined">inventory_2</span>
+                <h6>Choose Fact Table:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                <h6>Choose Desired Fact:</h6> <button type="button" class="btn btn-outline-primary">select</button>
               </div>
-              <h1>Choose Fact Table:</h1> <button type="button" class="btn btn-outline-primary">select</button>
+              
             </div>
-
-            <div class="card">
+<!-- 
+            <div class="selection-card">
               <div class="card-inner">
                 <h3>OLAP</h3>
                 <span class="material-icons-outlined">cards</span>
               </div>
               <h1>Choose OLAP Operation(s):</h1> <button type="button" class="btn btn-outline-primary">select</button>
               <h6>Roll-Up, Dice, Slice, Pivot</h6>
-            </div> -->
+            </div>
+          </div> -->
+
+          <div class="olap-cards">
+
+            <div class="olap-card">
+              <h2 class="olap-title">OLAP Command </h2>
+              <!-- <span class="material-icons-outlined">add_chart</span> -->
+              <div class="card-inner">
+                <h6>Choose OLAP Operation(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                <h6>Choose Dimension(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                <h6>choose footsteps:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+              </div>
+
+            </div>
+            
+            <div class="olap-card">
+              <h2 class="olap-title"> Major Footsteps</h2>
+              <!-- <span class="material-icons-outlined">add_chart</span> -->
+              <div class="card-inner">
+                <div>
+                  {% for major in majors %}
+                    <div>{{majors['major_name']}}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+            </div>
           </div>
           
         </div>
@@ -151,6 +181,9 @@
       <!-- <img src="C:\Users\User\Documents\School\FallGrad2023\DW\DataWarehouse_ProjectReport\interface\static\cuboid.jpg"> -->
     </div>
     
+    <!-- Scripts -->
+    <!-- Apex Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>
     <!-- Custom JS -->
     <!-- <script src="scripts.js"></script> -->
   </body>
