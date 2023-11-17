@@ -22,10 +22,11 @@ MAJORS = [
     }
 ]
 
+@app.route("/home")
 @app.route("/")
 def home():
     return render_template('home.html', 
                             majors=MAJORS)
  
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
