@@ -22,11 +22,21 @@ MAJORS = [
     }
 ]
 
-@app.route("/home")
+@app.route("/dashboard")
 @app.route("/")
-def home():
-    return render_template('home.html', 
+def dashboard():
+    return render_template('dashboard.html', 
                             majors=MAJORS)
+
+@app.route("/oldhome")
+def home():
+    return render_template('oldhome.html', 
+                            majors=MAJORS)
+
+@app.route("/olap")
+def olap():
+    return render_template('olap.html',
+                           majors=MAJORS)
  
 if __name__ == '__main__':
     app.run(debug=True)
