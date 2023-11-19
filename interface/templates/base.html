@@ -49,17 +49,23 @@
                 <div class="sidebar-brand">
                   <span class="material-icons-outlined">insert_chart</span>DW
                 </div>
+                <div>
+                  <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                </div>
                 <span class="material-icons-outlined">dashboard</span>
-                <!-- <span class="material-icons-outlined" onclick="closeSidebar()">close</span> -->
               </div>
       
               <ul class="sidebar-list">
                 <li class="sidebar-list-item">
+                    <a href="{{ url_for('dashboard') }}">
                     <span class="material-icons-outlined">dashboard</span>Dashboard
+                    </a>
                 </li>
                 <li class="sidebar-list-item">
+                    <a href="{{ url_for('olap') }}">
                     <span class="material-icons-outlined">domain_add</span> OLAP Query
                     <!-- <span class="material-symbols-outlined">expand_less</span> -->
+                    </a> 
                 </li>
                 <li class="sidebar-list-item">
                   <span class="material-icons-outlined">settings</span> Settings
