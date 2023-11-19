@@ -5,13 +5,13 @@
 
 {% block content %}
         <div class="main-title">
-        <h2>Data Warehouse Dashboard</h2>
+            <h2>Data Warehouse Dashboard</h2>
         <!-- <p>Lets start building a beautiful datawarehouse dashboard to display the Number of Graduates based on the fact tables dimensions.</p> -->
         </div>
         
         <div class="main-subtitle">
-        <h2>OLAP Operations Query Builder</h2>
-        <!-- <p>Lets start building a beautiful datawarehouse dashboard to display the Number of Graduates based on the fact tables dimensions.</p> -->
+            <h2>OLAP Operations Query Builder</h2>
+            <!-- <p>Lets start building a beautiful datawarehouse dashboard to display the Number of Graduates based on the fact tables dimensions.</p> -->
         </div>
 
         <!-- <div class="main-cards">
@@ -38,7 +38,6 @@
         </div> -->
 
         <div class="fact-table-cards">
-
             <div class="selection-card">
             <h2 class="selection-title">Fact Table</h2>
             <!-- <span class="material-icons-outlined">add_chart</span> -->
@@ -47,7 +46,8 @@
                 <h6>Choose Desired Fact:</h6> <button type="button" class="btn btn-outline-primary">select</button>
             </div>
             
-            </div>
+        </div>
+        
         <!-- 
             <div class="selection-card">
             <div class="card-inner">
@@ -74,14 +74,7 @@
             
             <div class="olap-card">
             <h2 class="olap-title"> Major Footsteps</h2>
-            <!-- <span class="material-icons-outlined">add_chart</span>
-            <div class="card-inner">
-                <div>   
-                {% for major in majors %}
-                    <div>{{major['major_name']}}</div>  
-                {% endfor %}
-                </div>
-            </div> -->
+
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Select Major
@@ -107,6 +100,46 @@
         </div>
         
         </div>
+
+        <!-- Form Section -->
+        <form action="/submit" method="post">
+            <!-- Dropdowns for selecting fields -->
+            <div class="olap-cards">
+                <div class="olap-card form-group">
+                <h2 class="olap-title">Major Dimension</h2>
+                    <div class="card-inner">
+                        <label for="factTable">Choose Major Footsteps:</label>
+                        <select class="form-select btn btn-secondary btn-sm" id="majorDimension" name="majorFootsteps">
+                            <option selected>select</option>
+                            {% for major in majors %}
+                                <option value="{{ major['major_id'] }}">{{ major['major_name'] }}</option>
+                            {% endfor %}
+                        </select>                        
+                        <!-- <select class="form-select" id="majorDimension" name="majorFootsteps">
+                            Populate options dynamically
+                            <option value="fact_table_1">Fact Table 1</option>
+                            <option value="fact_table_2">Fact Table 2</option>
+                            Add more options as needed
+                        </select> -->
+                    </div>
+                </div>
+            </div>
+<!-- 
+            <div class="form-group">
+                <label for="desiredFact">Choose Desired Fact:</label>
+                <select class="form-select" id="desiredFact" name="desiredFact">
+                    Populate options dynamically
+                    <option value="desired_fact_1">Desired Fact 1</option>
+                    <option value="desired_fact_2">Desired Fact 2</option>
+                    Add more options as needed
+                </select>
+            </div> -->
+            <!-- Add more dropdowns for OLAP operations, dimensions, etc. -->
+
+            <!-- Submission button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- End of Form Section -->
     <!-- End Main -->
     </main>
 {% endblock %}
