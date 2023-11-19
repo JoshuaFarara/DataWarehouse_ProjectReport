@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -37,6 +37,20 @@ def home():
 def olap():
     return render_template('olap.html',
                            majors=MAJORS)
- 
+
+@app.route("/olapformtest", methods=["POST", "GET"]) # as second parameter add methods that can be used on the page
+def olapformtest():
+    if request.method == "POST":
+        user = request.form["nm"]
+        return redirect(url_for("user", usr=user))
+    else:
+        return render_template('olapformtest.html')
+
+
+@app.route("/<usr>")
+def user(usr):
+    return f"<h1>{usr}</h1>"
+    
+
 if __name__ == '__main__':
     app.run(debug=True)
