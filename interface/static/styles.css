@@ -84,6 +84,14 @@ body {
     cursor: pointer;
 }
 
+.sidebar-list-item a {
+    width: 100%; /* Make the anchor tag fill the entire width of the list item */
+    text-decoration: none; /* Remove default underline for links */
+    color: inherit; /* Inherit text color from the parent (can be adjusted based on your design) */
+    display: inherit; /* Inherit display property to make it a block-level element */
+}
+
+
 .sidebar-responsive {
     display: inline !important;
     position: absolute;
