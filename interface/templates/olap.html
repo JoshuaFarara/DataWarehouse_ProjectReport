@@ -124,6 +124,35 @@
                     </div>
                 </div>
             </div>
+
+            <div class="olap-cards">
+                <div class="olap-card form-group">
+                <h2 class="olap-title">OLAP Command</h2>
+                    <div class="card-inner">
+                        <label for="olapCommand">Choose OLAP Operation(s):</label>
+                        <select class="form-select btn btn-secondary btn-sm" id="olapCommands" name="olapCommands">
+                            <option selected>select</option>
+                            {% for olap in olap_commands %}
+                                <option value="{{ olap['olap_id'] }}">{{ olap['olap_command'] }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="dimensionSelection">Choose Dimension(s):</label>
+                        <select class="form-select btn btn-secondary btn-sm" id="dimensionSelection" name="dimensionSelection">
+                            <option selected>select</option>
+                            {% for dimension in dimensions %}
+                                <option value="{{ dimension['dim_id'] }}">{{ dimension['dim_name'] }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="dimFootsteps">Choose Dimension Footsteps:</label>
+                        <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps" name="dimFootsteps">
+                            <option selected>select</option>
+                            {% for major in majors %}
+                                <option value="{{ major['major_id'] }}">{{ major['major_name'] }}</option>
+                            {% endfor %}
+                        </select>                                               
+                    </div>
+                </div>
+            </div>
 <!-- 
             <div class="form-group">
                 <label for="desiredFact">Choose Desired Fact:</label>

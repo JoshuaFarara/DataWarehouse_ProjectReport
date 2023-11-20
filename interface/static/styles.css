@@ -40,6 +40,29 @@ body {
     display: none;
 }
 
+.header-right {
+    padding: 20px 20px 20px 20px;
+    display: flex; /* Display flex to align items in a row */
+    align-items: center; /* Vertically center align items */
+}
+
+.header-icon-link {
+    text-decoration: none; /* Remove default underline for links */
+    color: inherit; /* Inherit text color from the parent (can be adjusted based on your design) */
+    margin-right: 10px; /* Add some spacing between icons */
+}
+
+.header-icon-link:last-child {
+    margin-right: 0; /* Remove margin for the last icon */
+}
+
+.header-icon-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+
+
 /*-------- SIDEBAR -------*/
 #sidebar {
     grid-area: sidebar;
