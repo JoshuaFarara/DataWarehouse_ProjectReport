@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.secret_key = "datawarehouse"
 app.permanent_session_lifetime = timedelta(minutes=5)
 
+
 MAJORS = [
     {
         'major_id': 1,
