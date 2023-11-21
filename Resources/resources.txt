@@ -15,3 +15,4 @@ database: fararadatawarehouse
 username: 9x49542ic57gayamrhj8
 host: aws.connect.psdb.cloud
 password: pscale_pw_cBOfUYCQqyQ4w2vSW4wZyA79PF6faSvXUGaxQhD9va8
+  
