@@ -1,0 +1,89 @@
+degree_id,college_name,major_name,degree_depth,degree_level,degree_name,degree_abbreviation
+1,Cyber College,Computer Sc,Undergraduate,Associate,Associate degree,AS
+2,Cyber College,Computer Sc,Undergraduate,Bachelor,Bachelor of Science,BS
+3,Cyber College,Computer Sc,Undergraduate,Bachelor,Bachelor of Art,BA
+4,Cyber College,Computer Sc,Graduate,Master,Master of Science,MS
+5,Cyber College,Computer Sc,Graduate,Master,Master of Art,MA
+6,Cyber College,Computer Sc,Graduate,Master,Master of Business Administration,MBA
+7,Cyber College,Computer Sc,Postgraduate,Doctorate,Doctor of Education,EdD
+8,Cyber College,Computer Sc,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+9,Cyber College,Information Sc,Undergraduate,Associate,Associate degree,AS
+10,Cyber College,Information Sc,Undergraduate,Bachelor,Bachelor of Science,BS
+11,Cyber College,Information Sc,Undergraduate,Bachelor,Bachelor of Art,BA
+12,Cyber College,Information Sc,Graduate,Master,Master of Science,MS
+13,Cyber College,Information Sc,Graduate,Master,Master of Art,MA
+14,Cyber College,Information Sc,Graduate,Master,Master of Business Administration,MBA
+15,Cyber College,Information Sc,Postgraduate,Doctorate,Doctor of Education,EdD
+16,Cyber College,Information Sc,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+17,Cyber College,Applied Sc,Undergraduate,Associate,Associate degree,AS
+18,Cyber College,Applied Sc,Undergraduate,Bachelor,Bachelor of Science,BS
+19,Cyber College,Applied Sc,Undergraduate,Bachelor,Bachelor of Art,BA
+20,Cyber College,Applied Sc,Graduate,Master,Master of Science,MS
+21,Cyber College,Applied Sc,Graduate,Master,Master of Art,MA
+22,Cyber College,Applied Sc,Graduate,Master,Master of Business Administration,MBA
+23,Cyber College,Applied Sc,Postgraduate,Doctorate,Doctor of Education,EdD
+24,Cyber College,Applied Sc,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+25,College of Business,Accounting,Undergraduate,Associate,Associate degree,AS
+26,College of Business,Accounting,Undergraduate,Bachelor,Bachelor of Science,BS
+27,College of Business,Accounting,Undergraduate,Bachelor,Bachelor of Art,BA
+28,College of Business,Accounting,Graduate,Master,Master of Science,MS
+29,College of Business,Accounting,Graduate,Master,Master of Art,MA
+30,College of Business,Accounting,Graduate,Master,Master of Business Administration,MBA
+31,College of Business,Accounting,Postgraduate,Doctorate,Doctor of Education,EdD
+32,College of Business,Accounting,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+33,College of Business,Business Admin,Undergraduate,Associate,Associate degree,AS
+34,College of Business,Business Admin,Undergraduate,Bachelor,Bachelor of Science,BS
+35,College of Business,Business Admin,Undergraduate,Bachelor,Bachelor of Art,BA
+36,College of Business,Business Admin,Graduate,Master,Master of Science,MS
+37,College of Business,Business Admin,Graduate,Master,Master of Art,MA
+38,College of Business,Business Admin,Graduate,Master,Master of Business Administration,MBA
+39,College of Business,Business Admin,Postgraduate,Doctorate,Doctor of Education,EdD
+40,College of Business,Business Admin,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+41,College of Business,Economics,Undergraduate,Associate,Associate degree,AS
+42,College of Business,Economics,Undergraduate,Bachelor,Bachelor of Science,BS
+43,College of Business,Economics,Undergraduate,Bachelor,Bachelor of Art,BA
+44,College of Business,Economics,Graduate,Master,Master of Science,MS
+45,College of Business,Economics,Graduate,Master,Master of Art,MA
+46,College of Business,Economics,Graduate,Master,Master of Business Administration,MBA
+47,College of Business,Economics,Postgraduate,Doctorate,Doctor of Education,EdD
+48,College of Business,Economics,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+49,College of Education,Elementary Ed,Undergraduate,Associate,Associate degree,AS
+50,College of Education,Elementary Ed,Undergraduate,Bachelor,Bachelor of Science,BS
+51,College of Education,Elementary Ed,Undergraduate,Bachelor,Bachelor of Art,BA
+52,College of Education,Elementary Ed,Graduate,Master,Master of Science,MS
+53,College of Education,Elementary Ed,Graduate,Master,Master of Art,MA
+54,College of Education,Elementary Ed,Graduate,Master,Master of Business Administration,MBA
+55,College of Education,Elementary Ed,Postgraduate,Doctorate,Doctor of Education,EdD
+56,College of Education,Elementary Ed,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+57,College of Education,Secondary Ed,Undergraduate,Associate,Associate degree,AS
+58,College of Education,Secondary Ed,Undergraduate,Bachelor,Bachelor of Science,BS
+59,College of Education,Secondary Ed,Undergraduate,Bachelor,Bachelor of Art,BA
+60,College of Education,Secondary Ed,Graduate,Master,Master of Science,MS
+61,College of Education,Secondary Ed,Graduate,Master,Master of Art,MA
+62,College of Education,Secondary Ed,Graduate,Master,Master of Business Administration,MBA
+63,College of Education,Secondary Ed,Postgraduate,Doctorate,Doctor of Education,EdD
+64,College of Education,Secondary Ed,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+65,College of Art and Science,Biology,Undergraduate,Associate,Associate degree,AS
+66,College of Art and Science,Biology,Undergraduate,Bachelor,Bachelor of Science,BS
+67,College of Art and Science,Biology,Undergraduate,Bachelor,Bachelor of Art,BA
+68,College of Art and Science,Biology,Graduate,Master,Master of Science,MS
+69,College of Art and Science,Biology,Graduate,Master,Master of Art,MA
+70,College of Art and Science,Biology,Graduate,Master,Master of Business Administration,MBA
+71,College of Art and Science,Biology,Postgraduate,Doctorate,Doctor of Education,EdD
+72,College of Art and Science,Biology,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+73,College of Art and Science,Chemistry,Undergraduate,Associate,Associate degree,AS
+74,College of Art and Science,Chemistry,Undergraduate,Bachelor,Bachelor of Science,BS
+75,College of Art and Science,Chemistry,Undergraduate,Bachelor,Bachelor of Art,BA
+76,College of Art and Science,Chemistry,Graduate,Master,Master of Science,MS
+77,College of Art and Science,Chemistry,Graduate,Master,Master of Art,MA
+78,College of Art and Science,Chemistry,Graduate,Master,Master of Business Administration,MBA
+79,College of Art and Science,Chemistry,Postgraduate,Doctorate,Doctor of Education,EdD
+80,College of Art and Science,Chemistry,Postgraduate,Doctorate,Doctor of Philosophy,PhD
+81,College of Art and Science,English,Undergraduate,Associate,Associate degree,AS
+82,College of Art and Science,English,Undergraduate,Bachelor,Bachelor of Science,BS
+83,College of Art and Science,English,Undergraduate,Bachelor,Bachelor of Art,BA
+84,College of Art and Science,English,Graduate,Master,Master of Science,MS
+85,College of Art and Science,English,Graduate,Master,Master of Art,MA
+86,College of Art and Science,English,Graduate,Master,Master of Business Administration,MBA
+87,College of Art and Science,English,Postgraduate,Doctorate,Doctor of Education,EdD
+88,College of Art and Science,English,Postgraduate,Doctorate,Doctor of Philosophy,PhD

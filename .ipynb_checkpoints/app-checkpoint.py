@@ -1,14 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
-# from database import engine
-from sqlalchemy import text
+from sqlalchemy import create_engine
 import mysql.connector
-from sqlalchemy import create_engine, text
-
 
 app = Flask(__name__)
-
 app.secret_key = "datawarehouse"
 app.permanent_session_lifetime = timedelta(minutes=5)
 
@@ -24,49 +20,17 @@ try:
     mydb.commit()
     print("Database created successfully")
     cursor.execute("use fararadatawarehouse")
-    print("using fararadatawarehouse")
 
 except mysql.connector.Error as err:
     print("An error occurred:", err)
 
-# database = 'fararadatawarehouse'
-# hostname = 'aws.connect.psdb.cloud'
-# username = 'i8eui9t5t23dkw5va23d'
-# password = 'pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55'
+database = 'fararadatawarehouse'
+hostname = 'aws.connect.psdb.cloud'
+username = 'i8eui9t5t23dkw5va23d'
+password = 'pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55'
 
 # engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}".format(host=hostname, db=database, user=username, pw=password))
-# engine = create_engine("mysql+mysqldb://root:pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55@aws.connect.psdb.cloud/fararadatawarehouse")
-db_connection_string = "mysql+pymysql://i8eui9t5t23dkw5va23d:pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55@aws.connect.psdb.cloud/fararadatawarehouse?charset=utf8mb4"
-
-engine = create_engine(
-    db_connection_string,
-    connect_args={
-       "ssl": {
-           "ssl_cert": "/etc/ssl/cert.pem"                               
-        }
-    }
-)
-
-with engine.connect() as conn:
-        result = conn.execute(text("select * from test"))
-        print(result.all())
-    #     result_dicts = []
-    #     for row in result.all():
-    #         result_dicts.append(dict(row._mapping))
-
-    # print(result_dicts)
-
-
-def load_dimensions_from_db():
-    with engine.connect() as conn:
-        result = conn.execute(text("select * from test"))
-        result_dicts = []
-        for row in result.all():
-            result_dicts.append(dict(row._mapping))
-
-    print(result_dicts)
-
-
+engine = create_engine("mysql+mysqldb://root:pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55@aws.connect.psdb.cloud/fararadatawarehouse")
 
 MAJORS = [
     {
