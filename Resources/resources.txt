@@ -10,9 +10,18 @@ planetscale database info:
 
 main-2023-11-20-k06809
 
-
+v1
 database: fararadatawarehouse
 username: 9x49542ic57gayamrhj8
 host: aws.connect.psdb.cloud
 password: pscale_pw_cBOfUYCQqyQ4w2vSW4wZyA79PF6faSvXUGaxQhD9va8
+  
+v2
+database: fararadatawarehouse
+username: i8eui9t5t23dkw5va23d
+host: aws.connect.psdb.cloud
+password: pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55
+
+mysql -h aws.connect.psdb.cloud -u i8eui9t5t23dkw5va23d -p pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55 --ssl-mode=VERIFY_IDENTITY --ssl-ca=/etc/ssl/certs/ca-certificates.crt
+
   

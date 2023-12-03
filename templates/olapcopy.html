@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block title %}
+    USRH's Data Warehouse 
+{% endblock %}
+
+{% block content %}
+        <div class="main-title">
+            <h2>Data Warehouse Dashboard</h2>
+        </div>
+        
+        <div class="main-subtitle">
+            <h2>OLAP Operations Query Builder</h2>
+        </div>
+
+        <div class="fact-table-cards">
+            <div class="selection-card">
+            <h2 class="selection-title">Fact Table</h2>
+            <div class="card-inner">
+                <h6>Choose Fact Table:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                <h6>Choose Desired Fact:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+            </div>
+            
+        </div>
+
+        <div class="olap-cards">
+
+            <div class="olap-card">
+                <h2 class="olap-title">OLAP Command </h2>
+                <div class="card-inner">
+                    <h6>Choose OLAP Operation(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                    <h6>Choose Dimension(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                    <h6>choose footsteps:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                </div>
+
+            </div>
+            
+            <div class="olap-card">
+                <h2 class="olap-title"> Major Footsteps</h2>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Major
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for major in majors %}
+                        <li><a class="dropdown-item" href="#">{{ major['major_name'] }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Major
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for major in majors %}
+                    <li><a class="dropdown-item" href="#">{{ major['major_name'] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        </div>
+
+        <!-- Form Section -->
+        <form action="/submit" method="post">
+            <!-- Dropdowns for selecting fields -->
+            <div class="olap-cards">
+                <div class="olap-card form-group">
+                    <h2 class="olap-title">Major Dimension</h2>
+                    <div class="card-inner">
+                        <label for="factTable">Choose Major Footsteps:</label>
+                        <select class="form-select btn btn-secondary btn-sm" id="majorDimension" name="majorFootsteps">
+                            <option selected>select</option>
+                            {% for major in majors %}
+                                <option value="{{ major['major_id'] }}">{{ major['major_name'] }}</option>
+                            {% endfor %}
+                        </select>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="olap-cards">
+                <div class="olap-card form-group">
+                    <h2 class="olap-title">OLAP Command</h2>
+                    <div class="card-inner row">
+                        <div class="col-3">
+                            <label for="olapCommand">Choose OLAP Operation(s):</label>
+                            <select class="form-select btn btn-secondary btn-sm" id="olapCommands" name="olapCommands">
+                                <option selected>select</option>
+                                {% for olap in olap_commands %}
+                                    <option value="{{ olap['olap_id'] }}">{{ olap['olap_command'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="dimensionSelection">Choose Dimension(s):</label>
+                            <select class="form-select btn btn-secondary btn-sm" id="dimensionSelection" name="dimensionSelection">
+                                <option selected>select</option>
+                                {% for dimension in dimensions %}
+                                    <option value="{{ dimension['dim_id'] }}">{{ dimension['dim_name'] }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="row col-3">
+                                <button type="button" class="btn btn-outline-secondary">Add Dimension</button>
+                            </div>    
+                        </div>
+                        
+                        <div class="col-3">
+                            <label for="dimFootsteps">Choose Dimension Footsteps:</label>
+                            <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps" name="dimFootsteps">
+                                <option selected>select</option>
+                                {% for major in majors %}
+                                    <option value="{{ major['major_id'] }}">{{ major['major_name'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>                                               
+                    </div>
+                </div>
+            </div>
+            <!-- Submission button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- End of Form Section -->
+    <!-- End Main -->
+    </main>
+{% endblock %}
