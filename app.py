@@ -8,7 +8,8 @@ from sqlalchemy import create_engine, text
 
 
 app = Flask(__name__)
-
+#add database
+app.config['SQLALCHEMY_DATABASE_URI']
 app.secret_key = "datawarehouse"
 app.permanent_session_lifetime = timedelta(minutes=5)
 
