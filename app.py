@@ -9,63 +9,9 @@ from sqlalchemy import create_engine, text
 
 app = Flask(__name__)
 #add database
-app.config['SQLALCHEMY_DATABASE_URI']
 app.secret_key = "datawarehouse"
 app.permanent_session_lifetime = timedelta(minutes=5)
 
-try:
-    mydb = mysql.connector.connect(
-        host="aws.connect.psdb.cloud",
-        user="i8eui9t5t23dkw5va23d",
-        password="pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55"
-    )
-    print("Connection established")
-    cursor = mydb.cursor()
-    cursor.execute("create database if not exists fararadatawarehouse")
-    mydb.commit()
-    print("Database created successfully")
-    cursor.execute("use fararadatawarehouse")
-    print("using fararadatawarehouse")
-
-except mysql.connector.Error as err:
-    print("An error occurred:", err)
-
-# database = 'fararadatawarehouse'
-# hostname = 'aws.connect.psdb.cloud'
-# username = 'i8eui9t5t23dkw5va23d'
-# password = 'pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55'
-
-# engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}".format(host=hostname, db=database, user=username, pw=password))
-# engine = create_engine("mysql+mysqldb://root:pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55@aws.connect.psdb.cloud/fararadatawarehouse")
-db_connection_string = "mysql+pymysql://i8eui9t5t23dkw5va23d:pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55@aws.connect.psdb.cloud/fararadatawarehouse?charset=utf8mb4"
-
-engine = create_engine(
-    db_connection_string,
-    connect_args={
-       "ssl": {
-           "ssl_cert": "/etc/ssl/cert.pem"                               
-        }
-    }
-)
-
-# with engine.connect() as conn:
-#         result = conn.execute(text("select * from test"))
-#         print(result.all())
-    #     result_dicts = []
-    #     for row in result.all():
-    #         result_dicts.append(dict(row._mapping))
-
-    # print(result_dicts)
-
-
-def load_dimensions_from_db():
-    with engine.connect() as conn:
-        result = conn.execute(text("select * from test"))
-        result_dicts = []
-        for row in result.all():
-            result_dicts.append(dict(row._mapping))
-
-    print(result_dicts)
 
 
 
