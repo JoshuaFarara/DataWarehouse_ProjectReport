@@ -47,9 +47,9 @@ engine = create_engine(
     }
 )
 
-with engine.connect() as conn:
-        result = conn.execute(text("select * from test"))
-        print(result.all())
+# with engine.connect() as conn:
+#         result = conn.execute(text("select * from test"))
+#         print(result.all())
     #     result_dicts = []
     #     for row in result.all():
     #         result_dicts.append(dict(row._mapping))
