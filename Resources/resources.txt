@@ -22,6 +22,10 @@ username: i8eui9t5t23dkw5va23d
 host: aws.connect.psdb.cloud
 password: pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55
 
+v3
+username: wh1x4lqjob1xuh5upzsr
+password: pscale_pw_5HhQMULzDzBZRI2LdRwWkIicybXkSjGUwk6v5eJtsNq
+
 mysql -h aws.connect.psdb.cloud -u i8eui9t5t23dkw5va23d -p pscale_pw_NCbmbbYj7wxwlxfNRQWv00xWWjjmBehti3G1gTtsk55 --ssl-mode=VERIFY_IDENTITY --ssl-ca=/etc/ssl/certs/ca-certificates.crt
 
 app.config['SQLALCHEMY_DATABASE_URI']

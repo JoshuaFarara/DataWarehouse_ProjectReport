@@ -13,7 +13,7 @@ from sqlalchemy import create_engine, text
 
 # From sqlalchemy documentation
 # mysql+pymysql://<username>:<password>@<host>/<dbname>[?<options>]
-db_connection_string = "mysql+pymysql://i8eui9t5t23dkw5va23d:pscale_pw_cBOfUYCQqyQ4w2vSW4wZyA79PF6faSvXUGaxQhD9va8@aws.connect.psdb.cloud/fararadatawarehouse?charset=utf8mb4"
+db_connection_string = "mysql+pymysql://wh1x4lqjob1xuh5upzsr:pscale_pw_5HhQMULzDzBZRI2LdRwWkIicybXkSjGUwk6v5eJtsNq@aws.connect.psdb.cloud/fararadatawarehouse?charset=utf8mb4"
 
 engine = create_engine(
     db_connection_string,
@@ -24,10 +24,24 @@ engine = create_engine(
     }
 )
 
-# with engine.connect() as conn:
-#     result = conn.execute(text("SELECT * from test"))
-#     print(result.all())
+
+
+with engine.connect() as conn:
+    result = conn.execute(text("SELECT * from test"))
+
+    # result_dicts = []
+    # for row in result.all():
+    #     result_dicts.append(dict(row))
+    result_dicts = []
+    for row in result.all():
+        result_dicts.append(dict(row._mapping))
+
+    print(result_dicts)
     # print("type(result):", type(result))
     # result_all = result.all()
     # print("type(result.all())", type(result_all))
-    # print("result_all():", result_all) 
+    # first_result = result_all[0]
+    # column_names = result.keys()
+    # first_result_dict = dict(zip(column_names, first_result))
+    # print(first_result_dict)
+        # print("type(first_result_dict):", type(first_result_dict))
