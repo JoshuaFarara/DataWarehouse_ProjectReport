@@ -1,18 +1,35 @@
+import datetime
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
 # from database import engine
 from sqlalchemy import text
 import mysql.connector
-from sqlalchemy import create_engine, text
+# from sqlalchemy import create_engine
+
 
 
 app = Flask(__name__)
 #add database
+
+
+#ADD MySQLDatabase
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql:///root:.1038368@localhost/my_datawarehouse'
+app.config['SECRET_KEY'] = 'secretkey'
 app.secret_key = "datawarehouse"
 app.permanent_session_lifetime = timedelta(minutes=5)
 
+db = SQLAlchemy(app)
+# #creat model
+# class Test(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(200), nullable=False)
+#     email = db.Column(db.String(200), nullable=False, unique=True)
+#     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
+#     #creat a string
+#     def __repr__(self):
+#         return '<Name %r>' % self.name
 
 
 MAJORS = [
