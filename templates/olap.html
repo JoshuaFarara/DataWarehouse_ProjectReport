@@ -14,157 +14,43 @@
             <!-- <p>Lets start building a beautiful datawarehouse dashboard to display the Number of Graduates based on the fact tables dimensions.</p> -->
         </div>
 
-        <!-- <div class="main-cards">
-
-        <div class="card">
-            <div class="card-inner">
-            <h3>Commands</h3>
-            <span class="material-icons-outlined">inventory_2</span>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-inner">
-            <h3>Dimensions</h3>
-            <span class="material-icons-outlined">table_chart</span>
-            </div>
-        </div> -->
-
-        <!-- <div class="card">
-            <div class="card-inner">
-            <h3>OLAP</h3>
-            </div>
-            
-        </div> -->
-
-        <div class="fact-table-cards">
-            <div class="selection-card">
-            <h2 class="selection-title">Fact Table</h2>
-            <!-- <span class="material-icons-outlined">add_chart</span> -->
-            <div class="card-inner">
-                <h6>Choose Fact Table:</h6> <button type="button" class="btn btn-outline-primary">select</button>
-                <h6>Choose Desired Fact:</h6> <button type="button" class="btn btn-outline-primary">select</button>
-            </div>
-            
-        </div>
-        
-        <!-- 
-            <div class="selection-card">
-            <div class="card-inner">
-                <h3>OLAP</h3>
-                <span class="material-icons-outlined">cards</span>
-            </div>
-            <h1>Choose OLAP Operation(s):</h1> <button type="button" class="btn btn-outline-primary">select</button>
-            <h6>Roll-Up, Dice, Slice, Pivot</h6>
-            </div>
-        </div> -->
-
-        <div class="olap-cards">
-
-            <div class="olap-card">
-            <h2 class="olap-title">OLAP Command </h2>
-            <!-- <span class="material-icons-outlined">add_chart</span> -->
-            <div class="card-inner">
-                <h6>Choose OLAP Operation(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
-                <h6>Choose Dimension(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
-                <h6>choose footsteps:</h6> <button type="button" class="btn btn-outline-primary">select</button>
-            </div>
-
-            </div>
-            
-            <div class="olap-card">
-            <h2 class="olap-title"> Major Footsteps</h2>
-
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Select Major
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for major in majors %}
-                    <li><a class="dropdown-item" href="#">{{ major['major_name'] }}</a></li>
-                {% endfor %}
-                </ul>
-            </div>
-            </div>
-
-            <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Select Major
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for major in majors %}
-                <li><a class="dropdown-item" href="#">{{ major['major_name'] }}</a></li>
-                {% endfor %}
-            </ul>
-            </div>
-        </div>
-        
-        </div>
-
         <!-- Form Section -->
-        <form action="/submit" method="post">
+        <form action="/dashboard" method="post">
             <!-- Dropdowns for selecting fields -->
             <div class="olap-cards">
                 <div class="olap-card form-group">
-                <h2 class="olap-title">Major Dimension</h2>
-                    <div class="card-inner">
-                        <label for="factTable">Choose Major Footsteps:</label>
-                        <select class="form-select btn btn-secondary btn-sm" id="majorDimension" name="majorFootsteps">
-                            <option selected>select</option>
-                            {% for major in majors %}
-                                <option value="{{ major['major_id'] }}">{{ major['major_name'] }}</option>
-                            {% endfor %}
-                        </select>                        
-                        <!-- <select class="form-select" id="majorDimension" name="majorFootsteps">
-                            Populate options dynamically
-                            <option value="fact_table_1">Fact Table 1</option>
-                            <option value="fact_table_2">Fact Table 2</option>
-                            Add more options as needed
-                        </select> -->
-                    </div>
+                <h6 class="olap-title">Choose the Olap Operation to find your desired result.
+                    You will also be able to choose the dimensions 
+                    and the desired attributes and values depending on your query at hand.
+                </h6>
+                    <div class="card-inner row">
+                          
+                    </div>   
                 </div>
             </div>
-
             <div class="olap-cards">
                 <div class="olap-card form-group">
-                <h2 class="olap-title">OLAP Command</h2>
                     <div class="card-inner row">
-                        <div class="col-3">
-                            <label for="olapCommand">Choose OLAP Operation(s):</label>
-                            <select class="form-select btn btn-secondary btn-sm" id="olapCommands" name="olapCommands">
-                                <option selected>select</option>
-                                {% for olap in olap_commands %}
-                                    <option value="{{ olap['olap_id'] }}">{{ olap['olap_command'] }}</option>
-                                {% endfor %}
-                            </select>
+                        <div class="row col-3">
+                            <button type="button" class="btn btn-outline-secondary" name="operationType" value="Roll Up" onclick="addRollUpCard()">Add Roll Up OLAP Operation</button>
                         </div>
-                        <div class="col-3">
-                            <label for="dimensionSelection">Choose Dimension(s):</label>
-                            <select class="form-select btn btn-secondary btn-sm" id="dimensionSelection" name="dimensionSelection">
-                                <option selected>select</option>
-                                {% for dimension in dimensions %}
-                                    <option value="{{ dimension['dim_id'] }}">{{ dimension['dim_name'] }}</option>
-                                {% endfor %}
-                            </select>
-                            <div class="row col-3">
-                                <button type="button" class="btn btn-outline-secondary">Add Dimension</button>
-                            </div>    
+                        <div class="row col-3">
+                            <button type="button" class="btn btn-outline-secondary" name="operationType" value="Roll Down" onclick="addRollDownCard()">Add Roll Down OLAP Operation</button>
                         </div>
-                        
-                        <div class="col-3">
-                            <label for="dimFootsteps">Choose Dimension Footsteps:</label>
-                            <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps" name="dimFootsteps">
-                                <option selected>select</option>
-                                {% for major in majors %}
-                                    <option value="{{ major['major_id'] }}">{{ major['major_name'] }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>                                               
+                        <div class="row col-2">
+                            <button type="button" class="btn btn-outline-secondary" name="operationType" value="Dice" onclick="addDiceCard()">Add Dice OLAP Operation</button>
+                        </div>
+                        <div class="row col-2">
+                            <button type="button" class="btn btn-outline-secondary" name="operationType" value="Slice" onclick="addSliceCard()">Add Slice OLAP Operation</button>
+                        </div>
+                        <div class="row col-2">
+                            <button type="button" class="btn btn-outline-secondary" name="operationType" value="Pivot" onclick="addPivotCard()">Add Pivot OLAP Operation</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-<!-- 
-            <div class="form-group">
+            </div> 
+            
+            <!-- <div class="form-group">
                 <label for="desiredFact">Choose Desired Fact:</label>
                 <select class="form-select" id="desiredFact" name="desiredFact">
                     Populate options dynamically
@@ -172,7 +58,7 @@
                     <option value="desired_fact_2">Desired Fact 2</option>
                     Add more options as needed
                 </select>
-            </div> -->
+            </div>  -->
             <!-- Add more dropdowns for OLAP operations, dimensions, etc. -->
 
             <!-- Submission button -->
@@ -181,4 +67,76 @@
         <!-- End of Form Section -->
     <!-- End Main -->
     </main>
+    
+    <script>
+        function addRollUpCard() {
+            var olapCards = document.querySelector('.olap-cards');
+    
+            var newCard = document.createElement('div');
+            newCard.classList.add('olap-card', 'form-group');
+    
+            var cardContent = `
+                {% include 'rollUp.html' %}
+            `;
+            newCard.innerHTML = cardContent;
+    
+            olapCards.appendChild(newCard);
+        }
+
+        function addRollDownCard() {
+            var olapCards = document.querySelector('.olap-cards');
+    
+            var newCard = document.createElement('div');
+            newCard.classList.add('olap-card', 'form-group');
+    
+            var cardContent = `
+                {% include 'rollDown.html' %}
+            `;
+            newCard.innerHTML = cardContent;
+    
+            olapCards.appendChild(newCard);
+        }
+
+        function addDiceCard() {
+            var olapCards = document.querySelector('.olap-cards');
+    
+            var newCard = document.createElement('div');
+            newCard.classList.add('olap-card', 'form-group');
+    
+            var cardContent = `
+                {% include 'dice.html' %}
+            `;
+            newCard.innerHTML = cardContent;
+    
+            olapCards.appendChild(newCard);
+        }
+        
+        function addSliceCard() {
+            var olapCards = document.querySelector('.olap-cards');
+    
+            var newCard = document.createElement('div');
+            newCard.classList.add('olap-card', 'form-group');
+    
+            var cardContent = `
+                {% include 'slice.html' %}
+            `;
+            newCard.innerHTML = cardContent;
+    
+            olapCards.appendChild(newCard);
+        }
+
+        function addPivotCard() {
+            var olapCards = document.querySelector('.olap-cards');
+    
+            var newCard = document.createElement('div');
+            newCard.classList.add('olap-card', 'form-group');
+    
+            var cardContent = `
+                {% include 'pivot.html' %}
+            `;
+            newCard.innerHTML = cardContent;
+    
+            olapCards.appendChild(newCard);
+        }
+    </script>
 {% endblock %}

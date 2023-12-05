@@ -1,0 +1,33 @@
+def get_table_names():
+    inspector = inspect(engine)
+    return inspector.get_table_names()
+
+def get_footsteps_from_db(selected_dimension):
+    # Query the database to get column names based on the selected dimension
+    with engine.connect() as conn:
+        inspector = inspect(engine)
+        columns = [column['name'] for column in inspector.get_columns(selected_dimension)]
+        return columns
+
+@app.route("/get_footsteps")
+def get_footsteps():
+    selected_dimension = request.args.get('dimension')
+    footsteps = get_footsteps_from_db(selected_dimension)
+    return jsonify(footsteps)
+
+
+document.getElementById("dimensionSelection").addEventListener("change", function() {
+        var selectedDimension = this.value;
+        fetch(`/get_footsteps?dimension=${selectedDimension}`)
+            .then(response => response.json())
+            .then(data => {
+                var select = document.getElementById("dimFootsteps");
+                select.innerHTML = "";
+                data.forEach(function(item) {
+                    var option = document.createElement('option');
+                    option.value = item;
+                    option.text = item;
+                    select.appendChild(option);
+                });
+            });
+        });

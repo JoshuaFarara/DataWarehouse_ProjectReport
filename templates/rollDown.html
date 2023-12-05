@@ -1,0 +1,46 @@
+<h4 class="olap-title">Roll Down Command and Dimension Selection</h4>
+<div class="card-inner row">
+    <div class="col-3">
+        <label for="rollDown">OLAP:</label>
+        <select class="btn btn-light" id="rollDown" name="rollDown">
+            <option selected>Roll Down<option></select>
+    </div>
+    <div class="col-3">
+        <label for="rollDownDimension">Choose Dimension(s):</label>
+        <select class="form-select btn btn-secondary btn-sm" id="rollDownDimension" name="rollDownDimension">
+            <option selected>select</option>
+            {% for table_name in table_names %}
+                <option value="{{ table_name }}">{{ table_name }}</option>
+            {% endfor %}
+        </select>
+        <!-- <div class="row col-3">
+            <button type="button" class="btn btn-outline-secondary">Add Dimension</button>
+        </div>     -->
+    </div>
+    
+    <div class="col-3">
+        <label for="dimSteps1">Choose Dimension Footsteps:</label>
+        <select class="form-select btn btn-secondary btn-sm" id="dimSteps1" name="dimSteps1">
+            <option selected>select</option>
+            {% for row in footsteps %}
+                {% for key, value in row.items() %}
+                    <option value="{{ key }}">{{ key }}</option>
+                {% endfor %}
+                <!-- <option value="{{ step }}">{{ step }}</option> -->
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div class="col-3">
+        <label for="dimSteps2">Choose Dimension Footsteps:</label>
+        <select class="form-select btn btn-secondary btn-sm" id="dimSteps2" name="dimSteps2">
+            <option selected>select</option>
+            {% for row in footsteps %}
+                {% for key, value in row.items() %}
+                    <option value="{{ key }}">{{ key }}</option>
+                {% endfor %}
+                <!-- <option value="{{ step }}">{{ step }}</option> -->
+            {% endfor %}
+        </select>
+    </div>  
+</div>

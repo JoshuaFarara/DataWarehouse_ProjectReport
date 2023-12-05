@@ -1,0 +1,46 @@
+<h4 class="olap-title">Roll UP Command and Dimension Selection</h4>
+<div class="card-inner row">
+    <div class="col-3">
+        <label for="rollUp">OLAP:</label>
+        <select class="btn btn-light" id="rollUp" name="rollUp">
+            <option selected>Roll Up<option></select>
+    </div>
+    <div class="col-3">
+        <label for="rollUpDimension">Choose Dimension(s):</label>
+        <select class="form-select btn btn-secondary btn-sm" id="rollUpDimension" name="rollUpDimension">
+            <option selected>select</option>
+            {% for table_name in table_names %}
+                <option value="{{ table_name }}">{{ table_name }}</option>
+            {% endfor %}
+        </select>
+        <!-- <div class="row col-3">
+            <button type="button" class="btn btn-outline-secondary">Add Dimension</button>
+        </div>     -->
+    </div>
+    
+    <div class="col-3">
+        <label for="dimFootsteps1">Choose Dimension Footsteps:</label>
+        <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps1" name="dimFootsteps1">
+            <option selected>select</option>
+            {% for row in footsteps %}
+                {% for key, value in row.items() %}
+                    <option value="{{ key }}">{{ key }}</option>
+                {% endfor %}
+                <!-- <option value="{{ step }}">{{ step }}</option> -->
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div class="col-3">
+        <label for="dimFootsteps2">Choose Dimension Footsteps:</label>
+        <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps2" name="dimFootsteps2">
+            <option selected>select</option>
+            {% for row in footsteps %}
+                {% for key, value in row.items() %}
+                    <option value="{{ key }}">{{ key }}</option>
+                {% endfor %}
+                <!-- <option value="{{ step }}">{{ step }}</option> -->
+            {% endfor %}
+        </select>
+    </div>  
+</div>
