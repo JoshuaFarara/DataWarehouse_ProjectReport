@@ -17,10 +17,10 @@ from sqlalchemy import create_engine, text, engine, inspect
 # From sqlalchemy documentation
 # mysql+pymysql://<username>:<password>@<host>/<dbname>[?<options>]
 load_dotenv()
-db_connection_string = os.getenv("DB_CONNECTION_STRING")
+DB_CONNECTION_STRING = os.getenv("DB_CONNECTION_STRING")
 
 engine = create_engine(
-    db_connection_string,
+    DB_CONNECTION_STRING,
     connect_args={
        "ssl": {
            "ssl_cert": "/etc/ssl/cert.pem"                               
