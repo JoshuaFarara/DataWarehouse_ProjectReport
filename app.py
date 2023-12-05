@@ -31,12 +31,7 @@ def dashboard():
         dimSteps1 = request.form.get('dimSteps1')
         dimSteps2 = request.form.get('dimSteps2')
 
-        # response = {'selectedOLAP': rollUp,
-        #             'selected_dimension': data, 
-        #             'selected_footsteps': [footstep1, footstep2]
-        # }
-
-        # return jsonify(response)
+    
     
         roll_up_data = None
         roll_down_data = None
