@@ -1,7 +1,10 @@
+from dotenv import load_dotenv
+
 # import sqlalchemy
 # print(sqlalchemy.__version__)
-# import os
-from sqlalchemy import create_engine, text
+import os
+# import inspect
+from sqlalchemy import create_engine, text, engine, inspect
 
 # import ssl
 # print(ssl.OPENSSL_VERSION) 
@@ -13,7 +16,8 @@ from sqlalchemy import create_engine, text
 
 # From sqlalchemy documentation
 # mysql+pymysql://<username>:<password>@<host>/<dbname>[?<options>]
-db_connection_string = "mysql+pymysql://wh1x4lqjob1xuh5upzsr:pscale_pw_5HhQMULzDzBZRI2LdRwWkIicybXkSjGUwk6v5eJtsNq@aws.connect.psdb.cloud/fararadatawarehouse?charset=utf8mb4"
+load_dotenv()
+db_connection_string = os.getenv("DB_CONNECTION_STRING")
 
 engine = create_engine(
     db_connection_string,
@@ -26,22 +30,54 @@ engine = create_engine(
 
 
 
-with engine.connect() as conn:
-    result = conn.execute(text("SELECT * from test"))
+# with engine.connect() as conn:
+#     result = conn.execute(text("SELECT * from test"))
 
-    # result_dicts = []
-    # for row in result.all():
-    #     result_dicts.append(dict(row))
-    result_dicts = []
-    for row in result.all():
-        result_dicts.append(dict(row._mapping))
+#     # result_dicts = []
+#     # for row in result.all():
+#     #     result_dicts.append(dict(row))
+#     result_dicts = []
+#     for row in result.all():
+#         result_dicts.append(dict(row._mapping))
 
-    print(result_dicts)
-    # print("type(result):", type(result))
-    # result_all = result.all()
-    # print("type(result.all())", type(result_all))
-    # first_result = result_all[0]
-    # column_names = result.keys()
-    # first_result_dict = dict(zip(column_names, first_result))
-    # print(first_result_dict)
-        # print("type(first_result_dict):", type(first_result_dict))
+#     print(result_dicts)
+    
+def load_dim_from_db():
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * from test"))
+        # footsteps = []
+        # for row in result.all():
+        #     footsteps.append(dict(row._mapping))
+        footsteps = []
+        for row in result.fetchall():
+            footsteps.append(dict(row._mapping))
+        # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
+        return footsteps
+    
+def load_dim_degree_from_db():
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * from dim_degrees"))
+        # footsteps = []
+        # for row in result.all():
+        #     footsteps.append(dict(row._mapping))
+        degree_footsteps = []
+        for row in result.fetchall():
+            degree_footsteps.append(dict(row._mapping))
+        # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
+        return degree_footsteps
+    
+def load_dim_gparanks_from_db():
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * from dim_gparanks"))
+        # footsteps = []
+        # for row in result.all():
+        #     footsteps.append(dict(row._mapping))
+        gparanks_footsteps = []
+        for row in result.fetchall():
+            gparanks_footsteps.append(dict(row._mapping))
+        # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
+        return gparanks_footsteps
+    
+def get_table_names():
+    inspector = inspect(engine)
+    return inspector.get_table_names()

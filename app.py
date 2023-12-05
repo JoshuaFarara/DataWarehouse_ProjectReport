@@ -1,8 +1,10 @@
+from dotenv import load_dotenv
+import os
 import datetime
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, jsonify, render_template, request, redirect, url_for, session, flash
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
-from database import engine
+from database import load_dim_from_db, load_dim_degree_from_db, load_dim_gparanks_from_db, get_table_names
 from sqlalchemy import text
 from sqlalchemy import MetaData
 
@@ -10,78 +12,75 @@ from sqlalchemy import MetaData
 from sqlalchemy import create_engine, inspect
 
 
-
 app = Flask(__name__)
-#add database
 
 
-#ADD MySQLDatabase
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysq+pymysql:///root:.1038368@localhost/my_datawarehouse'
-# app.config['SECRET_KEY'] = 'secretkey'
-# app.secret_key = "datawarehouse"
-# app.permanent_session_lifetime = timedelta(minutes=5)
-
-# db = SQLAlchemy(app)
-# #creat model
-# class Test(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(200), nullable=False)
-#     email = db.Column(db.String(200), nullable=False, unique=True)
-#     date_added = db.Column(db.DateTime, default=datetime.utcnow)
-
-#     #creat a string
-#     def __repr__(self):
-#         return '<Name %r>' % self.name
-# db_connection_string = "mysql+pymysql://wh1x4lqjob1xuh5upzsr:pscale_pw_5HhQMULzDzBZRI2LdRwWkIicybXkSjGUwk6v5eJtsNq@aws.connect.psdb.cloud/fararadatawarehouse?charset=utf8mb4"
-
-# engine = create_engine(
-#     db_connection_string,
-#     connect_args={
-#        "ssl": {
-#            "ssl_cert": "/etc/ssl/cert.pem"                               
-#         }
-#     }
-# )
-
-def load_dim_from_db():
-    with engine.connect() as conn:
-        result = conn.execute(text("SELECT * from test"))
-        # footsteps = []
-        # for row in result.all():
-        #     footsteps.append(dict(row._mapping))
-        footsteps = []
-        for row in result.fetchall():
-            footsteps.append(dict(row._mapping))
-        # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
-
-        return footsteps
-    
-def get_table_names():
-    inspector = inspect(engine)
-    return inspector.get_table_names()
-
-
-
-@app.route("/dashboard")
+# Pages
+@app.route("/dashboard", methods=['POST'])
 @app.route("/")
 def dashboard():
-    return render_template('dashboard.html', 
-                            majors=MAJORS)
+    if request.method == 'POST':
+    
+        rollUp = request.form.get('rollUp')
+        rollUpDimension = request.form.get('rollUpDimension')
+        dimFootsteps1 = request.form.get('dimFootsteps1')
+        dimFootsteps2 = request.form.get('dimFootsteps2')
+
+        rollDown = request.form.get('rollDown')
+        rollDownDimension = request.form.get('rollDownDimension')
+        dimSteps1 = request.form.get('dimSteps1')
+        dimSteps2 = request.form.get('dimSteps2')
+
+    
+    
+        roll_up_data = None
+        roll_down_data = None
+
+        responses = []
+        
+        if rollUp:
+            roll_up_data =  {
+                'selectedOLAP': rollUp,
+                'selected_dimension': rollUpDimension, 
+                'selected_footsteps': [dimFootsteps1, dimFootsteps2]
+            }
+            responses.append(roll_up_data)
+
+        if rollDown:  # Check if the Roll Down section is submitted
+            roll_down_data = {
+                'selectedOLAP': rollDown,
+                'selected_dimension': rollDownDimension,
+                'selected_footsteps': [dimSteps1, dimSteps2]
+            }
+            responses.append(roll_down_data)
+
+        return jsonify(responses)
+    else:
+        return render_template('dashboard.html')
+    # return render_template('dashboard.html')
 
 @app.route("/oldhome")
 def home():
     return render_template('oldhome.html', 
                             majors=MAJORS)
 
+
+@app.route("/api/dimensions")
+def list_dimensions():
+    footsteps = load_dim_from_db()
+    return jsonify(footsteps)
+
 @app.route("/olap")
 def olap():
     footsteps = load_dim_from_db()
+    degree_footsteps = load_dim_degree_from_db()
+    gparanks_footsteps = load_dim_gparanks_from_db()
     table_names = get_table_names()
     return render_template('olap.html',
-                           majors=MAJORS,
-                           olap_commands=OLAP_COMMANDS,
                            footsteps=footsteps,
-                           table_names=table_names)
+                           table_names=table_names,
+                           degree_footsteps=degree_footsteps,
+                           gparanks_footsteps=gparanks_footsteps)
 
 @app.route("/login", methods=["POST", "GET"]) # as second parameter add methods that can be used on the page
 def login():
