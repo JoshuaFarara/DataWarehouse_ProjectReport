@@ -1,0 +1,119 @@
+#HTML BLock ELEMENTS
+
+
+<div class="fact-table-cards">
+    <div class="selection-card">
+        <h2 class="selection-title">Fact Table</h2>
+        <!-- <span class="material-icons-outlined">add_chart</span> -->
+        <div class="card-inner">
+            <h6>Choose Fact Table:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+            <h6>Choose Desired Fact:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+        </div>
+    
+</div>
+
+
+<div class="olap-cards">
+    <div class="olap-card">
+            <h2 class="olap-title">OLAP Command </h2>
+            <!-- <span class="material-icons-outlined">add_chart</span> -->
+            <div class="card-inner">
+                <h6>Choose OLAP Operation(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                <h6>Choose Dimension(s):</h6> <button type="button" class="btn btn-outline-primary">select</button>
+                <h6>choose footsteps:</h6> <button type="button" class="btn btn-outline-primary">select</button>
+            </div>
+
+            </div>
+            
+            <div class="olap-card">
+            <h2 class="olap-title"> Major Footsteps</h2>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Select Major
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for major in majors %}
+                    <li><a class="dropdown-item" href="#">{{ major['major_name'] }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            </div>
+
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Select Major
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for major in majors %}
+                <li><a class="dropdown-item" href="#">{{ major['major_name'] }}</a></li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+<div class="olap-cards">
+    <div class="olap-card form-group">
+        <h2 class="olap-title">Major Dimension</h2>
+        <div class="card-inner">
+            <label for="factTable">Choose Major Footsteps:</label>
+            <select class="form-select btn btn-secondary btn-sm" id="majorDimension" name="majorFootsteps">
+                <option selected>select</option>
+                {% for major in majors %}
+                    <option value="{{ major['major_id'] }}">{{ major['major_name'] }}</option>
+                {% endfor %}
+            </select>                        
+            <!-- <select class="form-select" id="majorDimension" name="majorFootsteps">
+                Populate options dynamically
+                <option value="fact_table_1">Fact Table 1</option>
+                <option value="fact_table_2">Fact Table 2</option>
+                Add more options as needed
+            </select> -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+#EXTRA ELEMENTS
+ <!-- <div class="main-cards">
+
+        <div class="card">
+            <div class="card-inner">
+            <h3>Commands</h3>
+            <span class="material-icons-outlined">inventory_2</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+            <h3>Dimensions</h3>
+            <span class="material-icons-outlined">table_chart</span>
+            </div>
+        </div> -->
+
+        <!-- <div class="card">
+            <div class="card-inner">
+            <h3>OLAP</h3>
+            </div>
+            
+        </div> -->
+
+        
+        
+        <!-- 
+            <div class="selection-card">
+            <div class="card-inner">
+                <h3>OLAP</h3>
+                <span class="material-icons-outlined">cards</span>
+            </div>
+            <h1>Choose OLAP Operation(s):</h1> <button type="button" class="btn btn-outline-primary">select</button>
+            <h6>Roll-Up, Dice, Slice, Pivot</h6>
+            </div>
+        </div> -->
