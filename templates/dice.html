@@ -27,8 +27,8 @@
         </div>
         
         <div class="col-3">
-            <label for="dimFootsteps">Choose Dimension Footsteps:</label>
-            <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps" name="dimFootsteps">
+            <label for="dimFootsteps">Choose Footsteps Values:</label>
+            <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps-val1" name="dimFootsteps-val1">
                 <option selected>select</option>
                 {% for row in footsteps %}
                     {% for key, value in row.items() %}
@@ -37,5 +37,18 @@
                     <!-- <option value="{{ step }}">{{ step }}</option> -->
                 {% endfor %}
             </select>
-        </div>  
+        </div> 
+
+        <div class="col-3">
+            <label for="dimFootsteps">Choose Footsteps Values:</label>
+            <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps-val2" name="dimFootsteps-val2">
+                <option selected>select</option>
+                {% for row in footsteps %}
+                    {% for key, value in row.items() %}
+                        <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                    <!-- <option value="{{ step }}">{{ step }}</option> -->
+                {% endfor %}
+            </select>
+        </div>   
     </div>
