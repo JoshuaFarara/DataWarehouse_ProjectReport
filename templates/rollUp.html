@@ -22,16 +22,41 @@
         <label for="dimFootsteps1">Choose Dimension Footsteps:</label>
         <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps1" name="dimFootsteps1">
             <option selected>select</option>
+            {% for table_name in table_names %}
+                {% set columns = column_names[table_name] %}
+                {% for column in columns %}
+                    <option value="{{ column }}">{{ column }}</option>
+                {% endfor %}
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="col-3">
+        <label for="dimFootsteps2">Choose Dimension Footsteps:</label>
+        <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps2" name="dimFootsteps2">
+            <option selected>select</option>
+            {% for table_name in table_names %}
+                {% set columns = column_names[table_name] %}
+                {% for column in columns %}
+                    <option value="{{ column }}">{{ column }}</option>
+                {% endfor %}
+            {% endfor %}
+        </select>
+    </div>
+
+    <!-- <div class="col-3">
+        <label for="dimFootsteps1">Choose Dimension Footsteps:</label>
+        <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps1" name="dimFootsteps1">
+            <option selected>select</option>
             {% for row in footsteps %}
                 {% for key, value in row.items() %}
                     <option value="{{ key }}">{{ key }}</option>
                 {% endfor %}
-                <!-- <option value="{{ step }}">{{ step }}</option> -->
             {% endfor %}
         </select>
-    </div>
+    </div> -->
     
-    <div class="col-3">
+ <!--   <div class="col-3">
         <label for="dimFootsteps2">Choose Dimension Footsteps:</label>
         <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps2" name="dimFootsteps2">
             <option selected>select</option>
@@ -39,8 +64,7 @@
                 {% for key, value in row.items() %}
                     <option value="{{ key }}">{{ key }}</option>
                 {% endfor %}
-                <!-- <option value="{{ step }}">{{ step }}</option> -->
             {% endfor %}
         </select>
-    </div>  
+    </div>   -->
 </div>

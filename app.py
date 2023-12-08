@@ -4,7 +4,7 @@ import datetime
 from flask import Flask, jsonify, render_template, request, redirect, url_for, session, flash
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
-from database import load_dim_from_db, load_dim_degree_from_db, load_dim_gparanks_from_db, get_table_names
+from database import load_dim_from_db, load_dim_degree_from_db, load_dim_gparank_from_db, load_dim_status_from_db, load_dim_time_from_db, get_column_names_from_table, get_table_names
 from sqlalchemy import text
 from sqlalchemy import MetaData
 
@@ -30,6 +30,13 @@ def dashboard():
         rollDownDimension = request.form.get('rollDownDimension')
         dimSteps1 = request.form.get('dimSteps1')
         dimSteps2 = request.form.get('dimSteps2')
+       
+        slice = request.form.get('slice')
+        rollDownDimension = request.form.get('rollDownDimension')
+        dimSteps1 = request.form.get('dimSteps1')
+        dimSteps2 = request.form.get('dimSteps2')
+
+        
 
     
     
@@ -53,6 +60,17 @@ def dashboard():
                 'selected_footsteps': [dimSteps1, dimSteps2]
             }
             responses.append(roll_down_data)
+        
+        # if slice:
+        #     slice_data = {
+        #        "selected_filters": {
+        #            "year": 1988,
+        #            "semester_name": "Spring",
+        #            "major_name": "Computer Sc", 
+        #     }
+        
+        # if slice:
+        #     slice_data = 
 
         return jsonify(responses)
     else:
@@ -74,13 +92,33 @@ def list_dimensions():
 def olap():
     footsteps = load_dim_from_db()
     degree_footsteps = load_dim_degree_from_db()
-    gparanks_footsteps = load_dim_gparanks_from_db()
+    gparank_footsteps = load_dim_gparank_from_db()
+    status_footsteps = load_dim_status_from_db()
+    time_footsteps = load_dim_time_from_db()
     table_names = get_table_names()
+    column_names = {}
+    for table_name in table_names:
+        column_names[table_name] = get_column_names_from_table(table_name)
     return render_template('olap.html',
                            footsteps=footsteps,
                            table_names=table_names,
                            degree_footsteps=degree_footsteps,
-                           gparanks_footsteps=gparanks_footsteps)
+                           gparank_footsteps=gparank_footsteps,
+                           status_footsteps=status_footsteps,
+                           time_footsteps=time_footsteps,
+                           column_names=column_names)
+
+# @app.route("/olap")
+# def olap():
+#     # Retrieve column names for all tables
+#     table_names = get_table_names()
+#     column_names = {}
+#     for table_name in table_names:
+#         column_names[table_name] = get_column_names_from_table(table_name)
+
+#     return render_template('olap.html',
+#                            table_names=table_names,
+#                            column_names=column_names)
 
 @app.route("/login", methods=["POST", "GET"]) # as second parameter add methods that can be used on the page
 def login():

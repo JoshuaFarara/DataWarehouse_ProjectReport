@@ -66,17 +66,48 @@ def load_dim_degree_from_db():
         # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
         return degree_footsteps
     
-def load_dim_gparanks_from_db():
+def load_dim_gparank_from_db():
     with engine.connect() as conn:
-        result = conn.execute(text("SELECT * from dim_gparanks"))
+        result = conn.execute(text("SELECT * from dim_gparank"))
         # footsteps = []
         # for row in result.all():
         #     footsteps.append(dict(row._mapping))
-        gparanks_footsteps = []
+        gparank_footsteps = []
         for row in result.fetchall():
-            gparanks_footsteps.append(dict(row._mapping))
+            gparank_footsteps.append(dict(row._mapping))
         # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
-        return gparanks_footsteps
+        return gparank_footsteps
+
+def load_dim_status_from_db():
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * from dim_status"))
+        # footsteps = []
+        # for row in result.all():
+        #     footsteps.append(dict(row._mapping))
+        dim_status_footsteps = []
+        for row in result.fetchall():
+            dim_status_footsteps.append(dict(row._mapping))
+        # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
+        return dim_status_footsteps
+    
+def load_dim_time_from_db():
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * from dim_time"))
+        # footsteps = []
+        # for row in result.all():
+        #     footsteps.append(dict(row._mapping))
+        dim_time_footsteps = []
+        for row in result.fetchall():
+            dim_time_footsteps.append(dict(row._mapping))
+        # footsteps = [dict(row) for row in result.fetchall()]  # Fetch all rows and convert to list of dictionaries
+        return dim_time_footsteps
+    
+def get_column_names_from_table(table_name):
+    with engine.connect() as conn:
+        inspector = inspect(engine)
+        columns = inspector.get_columns(table_name)
+        column_names = [column['name'] for column in columns]
+        return column_names
     
 def get_table_names():
     inspector = inspect(engine)

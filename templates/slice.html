@@ -1,41 +1,59 @@
 <h2 class="olap-title">Slice Command and Dimension Selection</h2>
     <div class="card-inner row">
         <div class="col-3">
-            <label for="dimensionSelection">Choose Dimension(s):</label>
-            <select class="form-select btn btn-secondary btn-sm" id="dimensionSelection" name="dimensionSelection">
-                <option selected>select</option>
-                {% for table_name in table_names %}
-                    <option value="{{ table_name }}">{{ table_name }}</option>
-                {% endfor %}
-            </select>
-            <!-- <div class="row col-3">
-                <button type="button" class="btn btn-outline-secondary">Add Dimension</button>
-            </div>     -->
+            <label for="slice">OLAP:</label>
+            <select class="btn btn-light" id="slice" name="slice">
+                <option selected>Roll Up<option></select>
         </div>
-        
         <div class="col-3">
-            <label for="dimFootsteps">Choose Dimension Footsteps:</label>
-            <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps" name="dimFootsteps">
+            <label for="timeSlice">Choose Time Footstep Values:</label>
+            <select class="form-select btn btn-secondary btn-sm" id="timeSlice" name="timeSlice">
                 <option selected>select</option>
-                {% for row in footsteps %}
+                {% for row in time_footsteps %}
                     {% for key, value in row.items() %}
-                        <option value="{{ key }}">{{ key }}</option>
-                    {% endfor %}
-                    <!-- <option value="{{ step }}">{{ step }}</option> -->
-                {% endfor %}
-            </select>
-        </div>
-        
-        <div class="col-3">
-            <label for="dimFootsteps">Choose Dimension Footsteps:</label>
-            <select class="form-select btn btn-secondary btn-sm" id="dimFootsteps" name="dimFootsteps">
-                <option selected>select</option>
-                {% for row in footsteps %}
-                    {% for key, value in row.items() %}
-                        <option value="{{ key }}">{{ key }}</option>
+                        <option value="{{ key }}">{{ value }}</option>
                     {% endfor %}
                     <!-- <option value="{{ step }}">{{ step }}</option> -->
                 {% endfor %}
             </select>
         </div>  
+        <div class="col-3">
+            <label for="degreeSlice">Choose Degree Footstep Values:</label>
+            <select class="form-select btn btn-secondary btn-sm" id="degreeSlice" name="degreeSlice">
+                <option selected>select</option>
+                {% for row in degree_footsteps %}
+                    {% for key, value in row.items() %}
+                        <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                    <!-- <option value="{{ step }}">{{ step }}</option> -->
+                {% endfor %}
+            </select>
+        </div>  
+
+        <div class="col-3">
+            <label for="gparankSlice">Choose GPARank Footstep Values:</label>
+            <select class="form-select btn btn-secondary btn-sm" id="gparankSlice" name="gparankSlice">
+                <option selected>select</option>
+                {% for row in gparank_footsteps %}
+                    {% for key, value in row.items() %}
+                        <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                    <!-- <option value="{{ step }}">{{ step }}</option> -->
+                {% endfor %}
+            </select>
+        </div>  
+
+        <div class="col-3">
+            <label for="statusSlice">Choose Status Footstep Values:</label>
+            <select class="form-select btn btn-secondary btn-sm" id="statusSlice" name="statusSlice">
+                <option selected>select</option>
+                {% for row in status_footsteps %}
+                    {% for key, value in row.items() %}
+                        <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                    <!-- <option value="{{ step }}">{{ step }}</option> -->
+                {% endfor %}
+            </select>
+        </div>  
+        
     </div>
